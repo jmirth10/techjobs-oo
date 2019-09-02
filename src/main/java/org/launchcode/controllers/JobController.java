@@ -25,6 +25,13 @@ public class JobController {
 
         // TODO #1 - get the Job with the given ID and pass it into the view
 
+        model.addAttribute("name", jobData.findAll().get(id).getName());
+        model.addAttribute("employer", jobData.findAll().get(id).getEmployer());
+        model.addAttribute("location", jobData.findAll().get(id).getLocation());
+        model.addAttribute("positionType", jobData.findAll().get(id).getPositionType());
+        model.addAttribute("coreCompetency", jobData.findAll().get(id).getCoreCompetency());
+
+
         return "job-detail";
     }
 
